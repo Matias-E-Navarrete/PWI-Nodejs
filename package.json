@@ -23,7 +23,9 @@
   "homepage": "https://github.com/Matias-E-Navarrete/PWI-Nodejs#readme",
   "dependencies": {
     "dotenv": "^16.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.0"
   },
   "type": "module"
 }

@@ -7,12 +7,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const userFilePath = path.join(__dirname, '../database/users.json')
 
-export const findAllUsersController = () => {
+export const findUsersController = () => {
     const users = JSON.parse(fs.readFileSync(userFilePath, 'utf8'))
     return users
 }
 
-export const getOneUserController = (id) => {
+export const getUserController = (id) => {
     const users = JSON.parse(fs.readFileSync(userFilePath, 'utf8'))
     const user = users.find(user => user.id === id)
     return user
