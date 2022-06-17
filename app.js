@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import express from 'express'
 import { db, dbConnection } from './src/database/connection.js'
+import { Users } from './src/model/users.model.js'
 import { contactsRouter } from './src/routes/contact.routes.js'
 import { productsRouter } from './src/routes/products.routes.js'
 import { userRouter } from './src/routes/user.routes.js'
@@ -11,6 +12,8 @@ const PORT = process.env.PORT || 8080 // Puerto. Para crear un servidor yo neces
 // comunicarse con el servidor (y hacer peticiones)
 
 dbConnection(db)                     // Probamos la conexión con la base de datos
+console.log(Users === db.models.users); // true
+
 
 app.use(express.static('public'));  // Dejamos accesible la carpeta
 app.use(express.json())             // Agrega un middleware que permite recibir body de las peticions  POST o PUT
