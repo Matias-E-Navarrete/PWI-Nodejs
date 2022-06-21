@@ -8,15 +8,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const userFilePath = path.join(__dirname, '../database/users.json')
 
-export const findUsersController = () => {
-    const users = JSON.parse(fs.readFileSync(userFilePath, 'utf8'))
+export const findUsersController = async () => {
+    const users = await Users.findAll()
     return users
-
 }
 
-export const getUserController = (id) => {
-    const users = JSON.parse(fs.readFileSync(userFilePath, 'utf8'))
-    const user = users.find(user => user.id === id)
+export const getUserController = async (id) => {
+    const user = await Users.findByPk(id)
     return user
 }
 
